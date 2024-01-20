@@ -7,14 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // The handle adjacent to the browser should be resized when it is clicked on and the mouse moves and stops when the mouse is no longer on it. 
     resizeBrowserHandle.addEventListener('mousedown', (event) => {
-            event.preventDefault();
-        
-            document.addEventListener('mousemove', handleMouseMove);
-            document.addEventListener('mouseup', () => {
+        event.preventDefault();
+
+        document.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('mouseup', () => {
             document.removeEventListener('mousemove', handleMouseMove);
         });
     });
-    
+
     // Function for handling the size when the mouse is moved horizontally.
     function handleMouseMove(event) {
         const sidebarWidth = event.clientX;
@@ -29,25 +29,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // The handle adjacent the control panel at the bottom should be resized when it is clicked on and the mouse moves and stops when the mouse is no longer on it. 
     resizeCtrlPanelHandle.addEventListener('mousedown', event => {
         event.preventDefault();
-        
+
         document.addEventListener('mousemove', handleMouseMoveY);
         document.addEventListener('mouseup', () => {
             document.removeEventListener('mousemove', handleMouseMoveY);
         });
-        
+
         function handleMouseMoveY(event) {
             const sidebarHeight = window.innerHeight - event.clientY;
             modelSheet.style.flex = `0 0 ${sidebarHeight}px`;
             ctrlPanel.style.height = `${sidebarHeight}px`;
         }
-        
+
     });
 
     // API browser accordion (TODO: Fix bug that prevents nested accordions from opening correctly)
     var acc = document.getElementsByClassName("browser-list-item");
 
     for (var i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
+        acc[i].addEventListener("click", function () {
             this.classList.toggle("active");
             var panel = this.nextElementSibling;
             if (panel.style.maxHeight) {
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     let browserLayers = browser.querySelectorAll('.nn-layer');
-    
+
     browserLayers.forEach(layer => {
 
         // Create a layer in the editor when clicked
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
             newLayer.innerHTML = layer.innerHTML;
 
             // Give the layer a unique ID upon being sent to the editor
-            newLayer.id = Math.floor(Math.random() * 2**64).toString(16)
+            newLayer.id = Math.floor(Math.random() * 2 ** 64).toString(16)
             modelSheet.appendChild(newLayer);
         })
 

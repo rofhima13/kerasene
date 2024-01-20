@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Quicksand&display=swap');
+        @import url("https://fonts.googleapis.com/css2?family=Cantarell&family=Quicksand&display=swap");
     </style>
 
     <script src="main.js"></script>
     <title>Kerasene</title>
 </head>
+
 <body>
     <header id="app-header">
-        <div id="logo">
-            <i class="fa fa-fire" id="fire-logo"></i> Kerasene
-        </div>
-        <div id="menu">
-        </div>
+        <div id="logo"><i class="fa fa-fire" id="fire-logo"></i> Kerasene</div>
+        <div id="menu"></div>
     </header>
     <main id="editor">
         <nav id="model-browser">
@@ -37,8 +35,12 @@
                     <div class="browser-list">
                         <div class="nn-layer input-layer" draggable="true">Input</div>
                         <div class="nn-layer dense-layer" draggable="true">Dense</div>
-                        <div class="nn-layer activation-layer" draggable="true">Activation</div>
-                        <div class="nn-layer embedding-layer" draggable="true">Embedding</div>
+                        <div class="nn-layer activation-layer" draggable="true">
+                            Activation
+                        </div>
+                        <div class="nn-layer embedding-layer" draggable="true">
+                            Embedding
+                        </div>
                         <div class="nn-layer masking-layer" draggable="true">Masking</div>
                         <div class="nn-layer lambda-layer" draggable="true">Lambda</div>
                     </div>
@@ -46,46 +48,51 @@
             </div>
         </nav>
         <div id="resize-browser">
-            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512">
+                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                <path
+                    d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z" />
+            </svg>
         </div>
         <div id="model-viewer">
             <div id="model-sheet">
                 <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" id="viewer-background">
                     <defs>
-                      <pattern id="smallGrid" width="8" height="8" patternUnits="userSpaceOnUse">
-                        <path d="M 8 0 L 0 0 0 8" fill="none" stroke="gray" stroke-width="0.5"/>
-                      </pattern>
-                      <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
-                        <rect width="80" height="80" fill="url(#smallGrid)"/>
-                        <path d="M 80 0 L 0 0 0 80" fill="none" stroke="gray" stroke-width="1"/>
-                      </pattern>
+                        <pattern id="smallGrid" width="8" height="8" patternUnits="userSpaceOnUse">
+                            <path d="M 8 0 L 0 0 0 8" fill="none" stroke="gray" stroke-width="0.5" />
+                        </pattern>
+                        <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+                            <rect width="80" height="80" fill="url(#smallGrid)" />
+                            <path d="M 80 0 L 0 0 0 80" fill="none" stroke="gray" stroke-width="1" />
+                        </pattern>
                     </defs>
-                        
+
                     <rect width="100%" height="100%" fill="url(#grid)" />
                 </svg>
             </div>
             <div id="param-ctrl-panel">
                 <div id="resize-model-sheet">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512">
+                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z" />
+                    </svg>
                 </div>
-                <div id="param-ctrl-panel-header">
-                    Input
-                </div>
+                <div id="param-ctrl-panel-header">Input</div>
                 <div id="param-ctrl-panel-main">
                     <div class="parameter">
                         Shape:
-                        <div id="input-shape-dimensions">
-                        </div>
+                        <div id="input-shape-dimensions"></div>
                         <button id="add-layer-dimension">Add dimension</button>
                         <button id="remove-layer-dimension">Remove last dimension</button>
                     </div>
                     <div class="parameter">
                         Batch size:
-                        <input type="number">
+                        <input type="number" />
                     </div>
                     <div class="parameter">
                         Data type:
-                        <select> 
+                        <select>
                             <option>float32</option>
                             <option>float64</option>
                             <option>int32</option>
@@ -94,20 +101,21 @@
                     </div>
                     <div class="parameter">
                         Sparse?
-                        <input type="radio" name="input-sparse"> Yes
-                        <input type="radio" name="input-sparse" > No
+                        <input type="radio" name="input-sparse" /> Yes
+                        <input type="radio" name="input-sparse" /> No
                     </div>
                     <div class="parameter">
                         Name:
-                        <input type="text">
+                        <input type="text" />
                     </div>
                     <div class="parameter">
                         Wrapper Tensor:
-                        <input type="text">
+                        <input type="text" />
                     </div>
                 </div>
             </div>
         </div>
     </main>
 </body>
+
 </html>
