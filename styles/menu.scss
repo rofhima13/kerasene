@@ -1,0 +1,26 @@
+@import "main";
+$MENU-COLOR: rgb(150, 8, 10);
+
+#menu {
+    background-color: $MENU-COLOR;
+    color: white;
+    font-family: "Lato", sans-serif;
+    z-index: 500;
+    box-shadow: $MAIN-SHADOW;
+    font-size: 11pt;
+}
+#menu-items {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+#menu-items * {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#menu-items *:hover {
+    background-color: rgba(0,0,0,0.3);
+}

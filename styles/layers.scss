@@ -1,0 +1,53 @@
+@import "main";
+
+$DENSE-COLOR: rgb(224, 240, 1);
+$REGULARIZATION-COLOR: rgb(0, 179, 48);
+$ACTIVATION-COLOR: rgb(36, 179, 179);
+$EMBEDDING-COLOR: rgb(0, 54, 202);
+$MASKING-COLOR: rgb(0, 0, 0);
+$LAMBDA-COLOR: rgb(222, 161, 222);
+$INPUT-COLOR: rgb(245, 46, 0);
+$EINSUM-COLOR: rgb(158, 134, 0);
+$IDENTITY-COLOR: rgba(0,0,0,0.5);
+$CONVOLUTION-COLOR: rgb(255, 153, 0);
+$POOLING-COLOR: rgb(0, 255, 255);
+
+.nn-layer {
+    padding: 20px;
+    color: white;
+    box-shadow: $MAIN-SHADOW;
+    font-weight: bold;
+    margin: 2px;
+}
+
+.nn-layer:hover {
+    outline: 2px solid white;
+}
+
+.dense-layer {
+    background-color: $DENSE-COLOR;
+}
+
+.regularization-layer {
+    background-color: $REGULARIZATION-COLOR;
+}
+
+.activation-layer {
+    background-color: $ACTIVATION-COLOR;
+}
+
+.embedding-layer {
+    background-color: $EMBEDDING-COLOR;
+}
+
+.masking-layer {
+    background-color: $MASKING-COLOR;
+}
+
+.lambda-layer {
+    background-color: $LAMBDA-COLOR;
+}
+
+.input-layer {
+    background-color: $INPUT-COLOR;
+}

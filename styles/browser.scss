@@ -1,0 +1,103 @@
+@import "main", "layers";
+
+$BROWSER-PADDING: 5px;
+$BROWSER-X-PADDING: 15px;
+$BROWSER-COLOR: $THEME-COLOR;
+$BROWSER-ACCENT-COLOR: $THEME-ACCENT-COLOR;
+
+// Backgroud styling for the main browser on the left side of the screen.
+#browser {
+    min-width: 250px;
+    max-width: 75vw;
+    width: 250px;
+    overflow: scroll;
+    overflow-x: hidden;
+    resize: horizontal;
+    background-color: $BROWSER-COLOR;
+    padding-bottom: 100px;
+}
+
+
+// Styling for individual browser items
+.browser-item {
+    margin: 0;
+    padding: $BROWSER-PADDING $BROWSER-X-PADDING;
+    display: flex;
+    width: 100%;
+    background-color: transparent;
+    color: $THEME-TEXT-COLOR;
+    border: none;
+    align-items: center;
+}
+
+// Darken for any active elements too
+.browser-item:hover {
+    background-color: rgb(0, 0, 0, 0.05);
+}
+
+// Styling for all child browser item lists.
+.browser-child {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; // This is overridden.
+    display: none;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+// Add an indent and left border to all child browser elements
+.browser-child > * {
+    margin-left: $BROWSER-X-PADDING;
+    border-left: 1px solid $BROWSER-ACCENT-COLOR;
+}
+
+// Styling for browser carets (the arrows on the left side of browser items)
+.browser-caret {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: $BROWSER-PADDING;
+}
+
+// Layer colors
+.browser-dense-layer {
+    color: $DENSE-COLOR;
+}
+
+.browser-regularization-layer {
+    color: $ACTIVATION-COLOR;
+}
+
+.browser-activation-layer {
+    color: $REGULARIZATION-COLOR;
+}
+
+.browser-embedding-layer {
+    color: $EMBEDDING-COLOR;
+}
+
+.browser-masking-layer {
+    color: $MASKING-COLOR;
+}
+
+.browser-lambda-layer {
+    color: $LAMBDA-COLOR;
+}
+
+.browser-input-layer {
+    color: $INPUT-COLOR;
+}
+
+.browser-convolution-layer {
+    color: $CONVOLUTION-COLOR;
+    text-shadow: 1px 1px 1px white;
+}
+
+.browser-pooling-layer {
+    color: $POOLING-COLOR;
+    text-shadow: 1px 1px 1px black;
+}
+
+.browser-leaf {
+    font-weight: bold;
+}
