@@ -4,45 +4,79 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
+    <!-- Main/misc styling, resizers et al. -->
+    <link rel="stylesheet" href="styles/out/main.css" />
+    <!-- Browser styling -->
+    <link rel="stylesheet" href="styles/out/browser.css" />
+    <!-- Menu bar styling -->
+    <link rel="stylesheet" href="styles/out/menu.css" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="kerasene.ico">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/e2dd7f4e57.js" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts API -->
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Cantarell&family=Quicksand&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Cantarell&family=Quicksand&family=Lato&display=swap");
     </style>
 
-    <script src="main.js"></script>
-    <title>Kerasene</title>
+
+    <script src="js/main.js"></script>
+    <!-- Browser API -->
+    <script src="js/browser.js"></script>
+    <title>Kerasene: Deep Learning for people</title>
 </head>
 
 <body>
     <header id="app-header">
-        <div id="logo"><i class="fa fa-fire" id="fire-logo"></i> Kerasene</div>
+        <div id="logo"><img id="logo-img" src="media/kerasene.svg"> Kerasene</div>
         <div id="menu"></div>
     </header>
+
+    <!-- Menu bar -->
+    <div id="menu">
+        <ul id="menu-items">
+            <li>File</li>
+            <li>Edit</li>
+            <li>Help</li>
+        </ul>
+    </div>
+
     <main id="editor">
-        <nav id="model-browser">
-            <div class="browser-item">
-                <button class="browser-list-item">
-                    <div class="browser-button"><i class="fa fa-bars"></i></div>
+        <nav id="browser">
+            <div class="browser-root">
+                <button class="browser-item clickable">
+                    <div class="browser-caret"><i class="fa-solid fa-caret-right"></i></div>
                     Layers
                 </button>
-                <div class="browser-list">
-                    <button class="browser-list-item">
-                        <div class="browser-button"><i class="fa fa-bars"></i></div>
+                <div class="browser-child">
+                    <button class="browser-item clickable">
+                        <div class="browser-caret"><i class="fa-solid fa-caret-right"></i></div>
                         Core
                     </button>
-                    <div class="browser-list">
-                        <div class="nn-layer input-layer" draggable="true">Input</div>
-                        <div class="nn-layer dense-layer" draggable="true">Dense</div>
-                        <div class="nn-layer activation-layer" draggable="true">
+                    <div class="browser-child">
+                        <button class="browser-leaf browser-item browser-input-layer clickable" draggable="true">Input</button>
+                        <button class="browser-leaf browser-item browser-dense-layer clickable" draggable="true">Dense</button>
+                        <button class="browser-leaf browser-item browser-activation-layer clickable" draggable="true">
                             Activation
-                        </div>
-                        <div class="nn-layer embedding-layer" draggable="true">
+                        </button>
+                        <button class="browser-leaf browser-item browser-embedding-layer clickable" draggable="true">
                             Embedding
-                        </div>
-                        <div class="nn-layer masking-layer" draggable="true">Masking</div>
-                        <div class="nn-layer lambda-layer" draggable="true">Lambda</div>
+                        </button>
+                        <button class="browser-leaf browser-item browser-masking-layer clickable" draggable="true">Masking</button>
+                        <button class="browser-leaf browser-item browser-lambda-layer clickable" draggable="true">Lambda</button>
+                    </div>
+                    <button class="browser-item clickable">
+                        <div class="browser-caret"><i class="fa-solid fa-caret-right"></i></div>
+                        Convolution
+                    </button>
+                    <div class="browser-child">
+                        <button class="browser-leaf browser-item browser-convolution-layer clickable" draggable="true">Conv1D</button>
+                        <button class="browser-leaf browser-item browser-convolution-layer clickable" draggable="true">Conv2D</button>
+                        <button class="browser-leaf browser-item browser-convolution-layer clickable" draggable="true">Conv3D</button>
                     </div>
                 </div>
             </div>

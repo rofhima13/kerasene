@@ -1,1 +1,4 @@
 Notes.md
+*.css.map
+*:Zone.Identifier
+styles/out/
