@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="styles/out/browser.css" />
     <!-- Menu bar styling -->
     <link rel="stylesheet" href="styles/out/menu.css" />
+    <!-- Layers styling -->
+    <link rel="stylesheet" href="styles/out/layers.css" />
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="kerasene.ico">
@@ -47,6 +49,7 @@
 
     <main id="editor">
         <nav id="browser">
+            <div class="header">API Browser</div>
             <div class="browser-root">
                 <button class="browser-item clickable">
                     <div class="browser-caret"><i class="fa-solid fa-caret-right"></i></div>
@@ -58,35 +61,140 @@
                         Core
                     </button>
                     <div class="browser-child">
-                        <button class="browser-leaf browser-item browser-input-layer clickable" draggable="true">Input</button>
-                        <button class="browser-leaf browser-item browser-dense-layer clickable" draggable="true">Dense</button>
-                        <button class="browser-leaf browser-item browser-activation-layer clickable" draggable="true">
+                        <button class="browser-leaf browser-item browser-component browser-input-layer clickable" draggable="true">Input</button>
+                        <button class="browser-leaf browser-item browser-component browser-dense-layer clickable" draggable="true">Dense</button>
+                        <button class="browser-leaf browser-item browser-component browser-activation-layer clickable" draggable="true">
                             Activation
                         </button>
-                        <button class="browser-leaf browser-item browser-embedding-layer clickable" draggable="true">
+                        <button class="browser-leaf browser-item browser-component browser-embedding-layer clickable" draggable="true">
                             Embedding
                         </button>
-                        <button class="browser-leaf browser-item browser-masking-layer clickable" draggable="true">Masking</button>
-                        <button class="browser-leaf browser-item browser-lambda-layer clickable" draggable="true">Lambda</button>
+                        <button class="browser-leaf browser-item browser-component browser-masking-layer clickable" draggable="true">Masking</button>
+                        <button class="browser-leaf browser-item browser-component browser-lambda-layer clickable" draggable="true">Lambda</button>
                     </div>
                     <button class="browser-item clickable">
                         <div class="browser-caret"><i class="fa-solid fa-caret-right"></i></div>
                         Convolution
                     </button>
                     <div class="browser-child">
-                        <button class="browser-leaf browser-item browser-convolution-layer clickable" draggable="true">Conv1D</button>
-                        <button class="browser-leaf browser-item browser-convolution-layer clickable" draggable="true">Conv2D</button>
-                        <button class="browser-leaf browser-item browser-convolution-layer clickable" draggable="true">Conv3D</button>
+                        <button class="browser-leaf browser-item browser-component browser-convolution-layer clickable" draggable="true">Conv1D</button>
+                        <button class="browser-leaf browser-item browser-component browser-convolution-layer clickable" draggable="true">Conv2D</button>
+                        <button class="browser-leaf browser-item browser-component browser-convolution-layer clickable" draggable="true">Conv3D</button>
+                    </div>
+                    <button class="browser-item clickable">
+                        <div class="browser-caret"><i class="fa-solid fa-caret-right"></i></div>
+                        Pooling
+                    </button>
+                    <div class="browser-child">
+                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">MaxPooling1D</button>
+                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">MaxPooling2D</button>
+                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">MaxPooling3D</button>
+                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">AveragePooling1D</button>
+                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">AveragePooling2D</button>
+                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">AveragePooling3D</button>
+                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">GlobalMaxPooling1D</button>
+                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">GlobalMaxPooling2D</button>
+                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">GlobalMaxPooling3D</button>
+                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">GlobalAveragePooling1D</button>
+                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">GlobalAveragePooling2D</button>
+                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">GlobalAveragePooling3D</button>
                     </div>
                 </div>
             </div>
+            <div class="browser-root">
+                <button class="browser-item clickable">
+                    <div class="browser-caret"><i class="fa-solid fa-caret-right"></i></div>
+                    Callbacks
+                </button>
+                <div class="browser-child">
+                    <button class="browser-leaf browser-item clickable">Base</button>
+                    <button class="browser-leaf browser-item clickable">Model Checkpoint</button>
+                    <button class="browser-leaf browser-item clickable">Backup And Restore</button>
+                    <button class="browser-leaf browser-item clickable">TensorBoard</button>
+                    <button class="browser-leaf browser-item clickable">Early Stopping</button>
+                    <button class="browser-leaf browser-item clickable">Learning Rate Scheduler</button>
+                    <button class="browser-leaf browser-item clickable">Reduce LR On Plateau</button>
+                    <button class="browser-leaf browser-item clickable">Remote Monitor</button>
+                    <button class="browser-leaf browser-item clickable">Lambda Callback</button>
+                    <button class="browser-leaf browser-item clickable">Terminate On NaN</button>
+                    <button class="browser-leaf browser-item clickable">CSV Logger</button>
+                    <button class="browser-leaf browser-item clickable">Progress Bar Logger</button>
+                    <button class="browser-leaf browser-item clickable">Swap EMA Weights</button>
+                </div>
+            </div>
+            <div class="browser-root">
+                <button class="browser-item clickable">
+                    <div class="browser-caret"><i class="fa-solid fa-caret-right"></i></div>
+                    Operations
+                </button>
+                <div class="browser-child">
+                    <button class="browser-item clickable">
+                        <div class="browser-caret"><i class="fa-solid fa-caret-right"></i></div>
+                        NumPy
+                    </button>
+                    <div class="browser-child">
+                        <small class="browser-item">Math API rabbit hole, avoid.</small>
+                    </div>
+                    <button class="browser-item clickable">
+                        <div class="browser-caret"><i class="fa-solid fa-caret-right"></i></div>
+                        NN
+                    </button>
+                    <div class="browser-child">
+                        <small class="browser-item">Math API rabbit hole, avoid.</small>
+                    </div>
+                    <button class="browser-item clickable">
+                        <div class="browser-caret"><i class="fa-solid fa-caret-right"></i></div>
+                        Linear Algebra
+                    </button>
+                    <div class="browser-child">
+                        <small class="browser-item">Math API rabbit hole, avoid.</small>
+                    </div>
+                    <button class="browser-item clickable">
+                        <div class="browser-caret"><i class="fa-solid fa-caret-right"></i></div>
+                        Core
+                    </button>
+                    <div class="browser-child">
+                        <small class="browser-item">Math API rabbit hole, avoid.</small>
+                    </div>
+                    <button class="browser-item clickable">
+                        <div class="browser-caret"><i class="fa-solid fa-caret-right"></i></div>
+                        Image
+                    </button>
+                    <div class="browser-child">
+                        <small class="browser-item">Math API rabbit hole, avoid.</small>
+                    </div>
+                    <button class="browser-item clickable">
+                        <div class="browser-caret"><i class="fa-solid fa-caret-right"></i></div>
+                        FFT
+                    </button>
+                    <div class="browser-child">
+                        <small class="browser-item">Math API rabbit hole, avoid.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="browser-root">
+                <button class="browser-item clickable">
+                    <div class="browser-caret"><i class="fa-solid fa-caret-right"></i></div>
+                    Optimizers
+                </button>
+                <div class="browser-child">
+                    <button class="browser-leaf browser-item clickable">SGD</button>
+                    <button class="browser-leaf browser-item clickable">RMSprop</button>
+                    <button class="browser-leaf browser-item clickable">Adam</button>
+                    <button class="browser-leaf browser-item clickable">AdamW</button>
+                    <button class="browser-leaf browser-item clickable">Adadelta</button>
+                    <button class="browser-leaf browser-item clickable">Adagrad</button>
+                    <button class="browser-leaf browser-item clickable">Adamax</button>
+                    <button class="browser-leaf browser-item clickable">Adafactor</button>
+                    <button class="browser-leaf browser-item clickable">Nadam</button>
+                    <button class="browser-leaf browser-item clickable">Ftrl</button>
+                    <button class="browser-leaf browser-item clickable">Lion</button>
+                    <button class="browser-leaf browser-item clickable">Loss Scale Optimizer</button>
+                </div>
+            </div>
         </nav>
-        <div id="resize-browser">
-            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="4" viewBox="0 0 128 512">
-                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                <path
-                    d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z" />
-            </svg>
+        <div id="resize-browser" class="resize-y">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
         </div>
         <div id="model-viewer">
             <div id="model-sheet">
@@ -105,14 +213,10 @@
                 </svg>
             </div>
             <div id="param-ctrl-panel">
-                <div id="resize-model-sheet">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512">
-                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                        <path
-                            d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z" />
-                    </svg>
+                <div id="resize-model-sheet" class="resize-x">
+                    <i class="fa-solid fa-ellipsis"></i>
                 </div>
-                <div id="param-ctrl-panel-header">Input</div>
+                <!-- <div id="param-ctrl-panel-header" class="header">Input</div>
                 <div id="param-ctrl-panel-main">
                     <div class="parameter">
                         Shape:
@@ -145,6 +249,112 @@
                     <div class="parameter">
                         Wrapper Tensor:
                         <input type="text" />
+                    </div>
+                </div> -->
+                <div id="param-ctrl-panel-header" class="header">Dense</div>
+                <div id="param-ctrl-panel-main">
+                    <div class="parameter">
+                        Units:
+                        <input type="number" />
+                    </div>
+                    <div class="parameter">
+                        Bias?
+                        <input type="radio" name="dense-bias" /> Yes
+                        <input type="radio" name="dense-bias" /> No
+                    </div>
+                    <div class="parameter">
+                        Kernel initializer:
+                        <select>
+                            <option>RandomNormal</option>
+                            <option>RandomUniform</option>
+                            <option>TruncatedNormal</option>
+                            <option>Zeros</option>
+                            <option>Ones</option>
+                            <option>GlorotNormal</option>
+                            <option selected>GlorotUniform</option>
+                            <option>HeNormal</option>
+                            <option>HeUniform</option>
+                            <option>OrthogonalInitializer</option>
+                            <option>Constant</option>
+                            <option>VarianceScaling</option>
+                            <option>LecunNormal</option>
+                            <option>LecunUniform</option>
+                            <option>Identity </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias initializer:
+                        <select>
+                            <option>RandomNormal</option>
+                            <option>RandomUniform</option>
+                            <option>TruncatedNormal</option>
+                            <option selected>Zeros</option>
+                            <option>Ones</option>
+                            <option>GlorotNormal</option>
+                            <option>GlorotUniform</option>
+                            <option>HeNormal</option>
+                            <option>HeUniform</option>
+                            <option>OrthogonalInitializer</option>
+                            <option>Constant</option>
+                            <option>VarianceScaling</option>
+                            <option>LecunNormal</option>
+                            <option>LecunUniform</option>
+                            <option>Identity </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Kernel regularizer:
+                        <select>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias regularizer:
+                        <select>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Activity regularizer:
+                        <select>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Kernel constraints:
+                        <select>
+                            <option>Constraint</option>
+                            <option>MaxNorm</option>
+                            <option>MinMaxNorm</option>
+                            <option>NonNeg</option>
+                            <option>UnitNorm </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias constraints:
+                        <select>
+                            <option>Constraint</option>
+                            <option>MaxNorm</option>
+                            <option>MinMaxNorm</option>
+                            <option>NonNeg</option>
+                            <option>UnitNorm </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        LoRA rank:
+                        <input type="number"/>
                     </div>
                 </div>
             </div>
