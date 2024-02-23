@@ -98,6 +98,11 @@ $BROWSER-ACCENT-COLOR: $THEME-ACCENT-COLOR;
     text-shadow: 1px 1px 1px black;
 }
 
+.browser-normalization-layer {
+    color: $NORMALIZATION-LAYER;
+    text-shadow: 1px 1px 1px black;
+}
+
 .browser-leaf {
     font-weight: bold;
 }

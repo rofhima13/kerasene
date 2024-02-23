@@ -183,10 +183,9 @@ body {
 
 #param-ctrl-panel-main {
     padding: 10px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
     justify-content: center;
-    flex-grow: 1;
 }
 
 .parameter {

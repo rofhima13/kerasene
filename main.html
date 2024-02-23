@@ -14,6 +14,10 @@
     <!-- Layers styling -->
     <link rel="stylesheet" href="styles/out/layers.css" />
 
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="kerasene.ico">
 
@@ -25,10 +29,13 @@
         @import url("https://fonts.googleapis.com/css2?family=Cantarell&family=Quicksand&family=Lato&display=swap");
     </style>
 
-
+    <!-- Main/misc scripts -->
     <script src="js/main.js"></script>
-    <!-- Browser API -->
+    <!-- Browser scripts -->
     <script src="js/browser.js"></script>
+    <!-- Parameter control panel scripts -->
+    <script src="js/panels.js"></script>
+
     <title>Kerasene: Deep Learning for people</title>
 </head>
 
@@ -77,27 +84,43 @@
                         Convolution
                     </button>
                     <div class="browser-child">
-                        <button class="browser-leaf browser-item browser-component browser-convolution-layer clickable" draggable="true">Conv1D</button>
-                        <button class="browser-leaf browser-item browser-component browser-convolution-layer clickable" draggable="true">Conv2D</button>
-                        <button class="browser-leaf browser-item browser-component browser-convolution-layer clickable" draggable="true">Conv3D</button>
+                        <button class="browser-leaf browser-item browser-component browser-convolution-layer clickable" draggable="true">Convolution</button>
+                        <button class="browser-leaf browser-item browser-component browser-convolution-layer clickable" draggable="true">Convolution (Separable)</button>
+                        <button class="browser-leaf browser-item browser-component browser-convolution-layer clickable" draggable="true">Convolution (Depthwise)</button>
+                        <button class="browser-leaf browser-item browser-component browser-convolution-layer clickable" draggable="true">Convolution (Transposed)</button>
                     </div>
                     <button class="browser-item clickable">
                         <div class="browser-caret"><i class="fa-solid fa-caret-right"></i></div>
                         Pooling
                     </button>
                     <div class="browser-child">
-                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">MaxPooling1D</button>
-                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">MaxPooling2D</button>
-                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">MaxPooling3D</button>
-                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">AveragePooling1D</button>
-                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">AveragePooling2D</button>
-                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">AveragePooling3D</button>
-                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">GlobalMaxPooling1D</button>
-                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">GlobalMaxPooling2D</button>
-                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">GlobalMaxPooling3D</button>
-                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">GlobalAveragePooling1D</button>
-                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">GlobalAveragePooling2D</button>
-                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">GlobalAveragePooling3D</button>
+                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">Max Pooling</button>
+                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">Average Pooling</button>
+                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">Max Pooling (Global)</button>
+                        <button class="browser-leaf browser-item browser-component browser-pooling-layer clickable" draggable="true">Average Pooling (Global)</button>
+                    </div>
+                    <button class="browser-item clickable">
+                        <div class="browser-caret"><i class="fa-solid fa-caret-right"></i></div>
+                        Normalization
+                    </button>
+                    <div class="browser-child">
+                        <button class="browser-leaf browser-item browser-component browser-normalization-layer clickable">Batch Normalization</button>
+                        <button class="browser-leaf browser-item browser-component browser-normalization-layer clickable">Layer Normalization</button>
+                        <button class="browser-leaf browser-item browser-component browser-normalization-layer clickable">Unit Normalization</button>
+                        <button class="browser-leaf browser-item browser-component browser-normalization-layer clickable">Group Normalization</button>
+                    </div>
+                    <button class="browser-item clickable">
+                        <div class="browser-caret"><i class="fa-solid fa-caret-right"></i></div>
+                        Regularization
+                    </button>
+                    <div class="browser-child">
+                        <button class="browser-leaf browser-item browser-component browser-regularization-layer clickable">Dropout</button>
+                        <button class="browser-leaf browser-item browser-component browser-regularization-layer clickable">Spatial Dropout</button>
+                        <button class="browser-leaf browser-item browser-component browser-regularization-layer clickable">Gaussian Dropout</button>
+                        <button class="browser-leaf browser-item browser-component browser-regularization-layer clickable">Alpha Dropout</button>
+                        <button class="browser-leaf browser-item browser-component browser-regularization-layer clickable">Gaussian Noise</button>
+                        <button class="browser-leaf browser-item browser-component browser-regularization-layer clickable">Alpha Dropout</button>
+                        <button class="browser-leaf browser-item browser-component browser-regularization-layer clickable">Activity Regularization</button>
                     </div>
                 </div>
             </div>
@@ -216,147 +239,34 @@
                 <div id="resize-model-sheet" class="resize-x">
                     <i class="fa-solid fa-ellipsis"></i>
                 </div>
-                <!-- <div id="param-ctrl-panel-header" class="header">Input</div>
+                <div id="param-ctrl-panel-header" class="header">Max Pooling</div>
                 <div id="param-ctrl-panel-main">
                     <div class="parameter">
-                        Shape:
-                        <div id="input-shape-dimensions"></div>
-                        <button id="add-layer-dimension">Add dimension</button>
-                        <button id="remove-layer-dimension">Remove last dimension</button>
+                        Dimensionality:
+                        <input type="radio" name="pool-dim" id=""> 1D
+                        <input type="radio" name="pool-dim" id=""> 2D
+                        <input type="radio" name="pool-dim" id=""> 3D
                     </div>
                     <div class="parameter">
-                        Batch size:
-                        <input type="number" />
+                        Pool size:
+                        <input type="number" name="" id="">
                     </div>
                     <div class="parameter">
-                        Data type:
-                        <select>
-                            <option>float32</option>
-                            <option>float64</option>
-                            <option>int32</option>
-                            <option>int64</option>
-                        </select>
+                        Strides:
+                        <input type="number" name="" id="">
                     </div>
                     <div class="parameter">
-                        Sparse?
-                        <input type="radio" name="input-sparse" /> Yes
-                        <input type="radio" name="input-sparse" /> No
+                        Padding:
+                        <input type="radio" name="pool-padding" id=""> Same
+                        <input type="radio" name="pool-padding" id=""> Valid
                     </div>
                     <div class="parameter">
-                        Name:
-                        <input type="text" />
-                    </div>
-                    <div class="parameter">
-                        Wrapper Tensor:
-                        <input type="text" />
-                    </div>
-                </div> -->
-                <div id="param-ctrl-panel-header" class="header">Dense</div>
-                <div id="param-ctrl-panel-main">
-                    <div class="parameter">
-                        Units:
-                        <input type="number" />
-                    </div>
-                    <div class="parameter">
-                        Bias?
-                        <input type="radio" name="dense-bias" /> Yes
-                        <input type="radio" name="dense-bias" /> No
-                    </div>
-                    <div class="parameter">
-                        Kernel initializer:
-                        <select>
-                            <option>RandomNormal</option>
-                            <option>RandomUniform</option>
-                            <option>TruncatedNormal</option>
-                            <option>Zeros</option>
-                            <option>Ones</option>
-                            <option>GlorotNormal</option>
-                            <option selected>GlorotUniform</option>
-                            <option>HeNormal</option>
-                            <option>HeUniform</option>
-                            <option>OrthogonalInitializer</option>
-                            <option>Constant</option>
-                            <option>VarianceScaling</option>
-                            <option>LecunNormal</option>
-                            <option>LecunUniform</option>
-                            <option>Identity </option>
-                        </select>
-                    </div>
-                    <div class="parameter">
-                        Bias initializer:
-                        <select>
-                            <option>RandomNormal</option>
-                            <option>RandomUniform</option>
-                            <option>TruncatedNormal</option>
-                            <option selected>Zeros</option>
-                            <option>Ones</option>
-                            <option>GlorotNormal</option>
-                            <option>GlorotUniform</option>
-                            <option>HeNormal</option>
-                            <option>HeUniform</option>
-                            <option>OrthogonalInitializer</option>
-                            <option>Constant</option>
-                            <option>VarianceScaling</option>
-                            <option>LecunNormal</option>
-                            <option>LecunUniform</option>
-                            <option>Identity </option>
-                        </select>
-                    </div>
-                    <div class="parameter">
-                        Kernel regularizer:
-                        <select>
-                            <option value="">Base</option>
-                            <option value="">L1</option>
-                            <option value="">L2</option>
-                            <option value="">L1L2</option>
-                            <option value="">OrthogonalRegularizer</option>
-                        </select>
-                    </div>
-                    <div class="parameter">
-                        Bias regularizer:
-                        <select>
-                            <option value="">Base</option>
-                            <option value="">L1</option>
-                            <option value="">L2</option>
-                            <option value="">L1L2</option>
-                            <option value="">OrthogonalRegularizer</option>
-                        </select>
-                    </div>
-                    <div class="parameter">
-                        Activity regularizer:
-                        <select>
-                            <option value="">Base</option>
-                            <option value="">L1</option>
-                            <option value="">L2</option>
-                            <option value="">L1L2</option>
-                            <option value="">OrthogonalRegularizer</option>
-                        </select>
-                    </div>
-                    <div class="parameter">
-                        Kernel constraints:
-                        <select>
-                            <option>Constraint</option>
-                            <option>MaxNorm</option>
-                            <option>MinMaxNorm</option>
-                            <option>NonNeg</option>
-                            <option>UnitNorm </option>
-                        </select>
-                    </div>
-                    <div class="parameter">
-                        Bias constraints:
-                        <select>
-                            <option>Constraint</option>
-                            <option>MaxNorm</option>
-                            <option>MinMaxNorm</option>
-                            <option>NonNeg</option>
-                            <option>UnitNorm </option>
-                        </select>
-                    </div>
-                    <div class="parameter">
-                        LoRA rank:
-                        <input type="number"/>
+                        Data format:
+                        <input type="radio" name="" id=""> Channels first
+                        <input type="radio" name="" id=""> Channels last
                     </div>
                 </div>
+                
             </div>
         </div>
     </main>

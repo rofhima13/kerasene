@@ -24,25 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
-    // // Add layer dimension on click
-    // const addLayerDimensionButton = document.getElementById("add-layer-dimension");
-    // var inputLayerShapeDimensions = document.getElementById("input-shape-dimensions");
-
-    // addLayerDimensionButton.addEventListener('click', () => {
-    //     let inp = document.createElement('input');
-    //     inp.type = "number"
-    //     inp.className = "layer-dimension";
-    //     inputLayerShapeDimensions.appendChild(inp);
-    // })
-
-    // // Remove layer dimension on click
-    // const removeLayerDimensionButton = document.getElementById("remove-layer-dimension");
-    // var inputLayerShapeDimensions = document.getElementById("input-shape-dimensions");
-
-    // removeLayerDimensionButton.addEventListener('click', () => {
-    //     inputLayerShapeDimensions.lastChild.remove();
-    // })
-
     let browserLayers = browser.querySelectorAll('.browser-component');
 
     browserLayers.forEach(layer => {
@@ -107,5 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         })
     }
+
+    
 
 })

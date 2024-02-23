@@ -1,0 +1,1058 @@
+Input
+==============================
+<div id="param-ctrl-panel-header" class="header">Input</div>
+<div id="param-ctrl-panel-main">
+    <div class="parameter">
+        Shape:
+        <div id="input-shape-dimensions"></div>
+        <button id="add-layer-dimension">Add dimension</button>
+        <button id="remove-layer-dimension">Remove last dimension</button>
+    </div>
+    <div class="parameter">
+        Batch size:
+        <input type="number" />
+    </div>
+    <div class="parameter">
+        Data type:
+        <select>
+            <option>float32</option>
+            <option>float64</option>
+            <option>int32</option>
+            <option>int64</option>
+        </select>
+    </div>
+    <div class="parameter">
+        Sparse?
+        <input type="radio" name="input-sparse" /> Yes
+        <input type="radio" name="input-sparse" /> No
+    </div>
+    <div class="parameter">
+        Name:
+        <input type="text" />
+    </div>
+    <div class="parameter">
+        Wrapper Tensor:
+        <input type="text" />
+    </div>
+</div>
+
+Dense
+=========================
+<div id="param-ctrl-panel-header" class="header">Dense</div>
+                <div id="param-ctrl-panel-main">
+                    <div class="parameter">
+                        Units:
+                        <input type="number" />
+                    </div>
+                    <div class="parameter">
+                        Bias?
+                        <input type="radio" name="dense-bias" /> Yes
+                        <input type="radio" name="dense-bias" /> No
+                    </div>
+                    <div class="parameter">
+                        Kernel initializer:
+                        <select>
+                            <option>RandomNormal</option>
+                            <option>RandomUniform</option>
+                            <option>TruncatedNormal</option>
+                            <option>Zeros</option>
+                            <option>Ones</option>
+                            <option>GlorotNormal</option>
+                            <option selected>GlorotUniform</option>
+                            <option>HeNormal</option>
+                            <option>HeUniform</option>
+                            <option>OrthogonalInitializer</option>
+                            <option>Constant</option>
+                            <option>VarianceScaling</option>
+                            <option>LecunNormal</option>
+                            <option>LecunUniform</option>
+                            <option>Identity </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias initializer:
+                        <select>
+                            <option>RandomNormal</option>
+                            <option>RandomUniform</option>
+                            <option>TruncatedNormal</option>
+                            <option selected>Zeros</option>
+                            <option>Ones</option>
+                            <option>GlorotNormal</option>
+                            <option>GlorotUniform</option>
+                            <option>HeNormal</option>
+                            <option>HeUniform</option>
+                            <option>OrthogonalInitializer</option>
+                            <option>Constant</option>
+                            <option>VarianceScaling</option>
+                            <option>LecunNormal</option>
+                            <option>LecunUniform</option>
+                            <option>Identity </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Kernel regularizer:
+                        <select>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias regularizer:
+                        <select>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Activity regularizer:
+                        <select>
+                            <option>None</option>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Kernel constraints:
+                        <select>
+                            <option>None</option>
+                            <option>Constraint</option>
+                            <option>MaxNorm</option>
+                            <option>MinMaxNorm</option>
+                            <option>NonNeg</option>
+                            <option>UnitNorm </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias constraints:
+                        <select>
+                            <option>Constraint</option>
+                            <option>MaxNorm</option>
+                            <option>MinMaxNorm</option>
+                            <option>NonNeg</option>
+                            <option>UnitNorm </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        LoRA rank:
+                        <input type="number"/>
+                    </div>
+                </div>
+
+Activation
+=====================
+<div id="param-ctrl-panel-header" class="header">Activation</div>
+<div id="param-ctrl-panel-main">
+    <div class="parameter">
+        Activation:
+        <select>
+            <option>relu</option>
+            <option>sigmoid</option>
+            <option>softmax</option>
+            <option>softplus</option>
+            <option>softsign</option>
+            <option>tanh</option>
+            <option>selu</option>
+            <option>elu</option>
+            <option>exponential</option>
+            <option>leaky_relu</option>
+            <option>relu6</option>
+            <option>silu</option>
+            <option>hard_silu</option>
+            <option>gelu</option>
+            <option>hard_sigmoid</option>
+            <option>linear</option>
+            <option>mish</option>
+            <option>log_softmax </option>
+        </select>
+        <div class="parameter">
+            <button>Advanced options</button>
+        </div>
+    </div>
+</div>
+
+Embedding
+====================
+<div id="param-ctrl-panel-header" class="header">Embedding</div>
+<div id="param-ctrl-panel-main">
+    <div class="parameter">
+        Input dimension:
+        <input type="number"/>
+    </div>
+    <div class="parameter">
+        Output dimension:
+        <input type="number"/>
+    </div>
+    <div class="parameter">
+        Initializer:
+        <select>
+            <option>RandomNormal</option>
+            <option selected>RandomUniform</option>
+            <option>TruncatedNormal</option>
+            <option>Zeros</option>
+            <option>Ones</option>
+            <option>GlorotNormal</option>
+            <option>GlorotUniform</option>
+            <option>HeNormal</option>
+            <option>HeUniform</option>
+            <option>OrthogonalInitializer</option>
+            <option>Constant</option>
+            <option>VarianceScaling</option>
+            <option>LecunNormal</option>
+            <option>LecunUniform</option>
+            <option>Identity </option>
+        </select>
+    </div>
+    <div class="parameter">
+        Regularizer:
+        <select>
+            <option>None</option>
+            <option value="">Base</option>
+            <option value="">L1</option>
+            <option value="">L2</option>
+            <option value="">L1L2</option>
+            <option value="">OrthogonalRegularizer</option>
+        </select>
+    </div>
+    <div class="parameter">
+        Constraint:
+        <select>
+            <option>None</option>
+            <option>Constraint</option>
+            <option>MaxNorm</option>
+            <option>MinMaxNorm</option>
+            <option>NonNeg</option>
+            <option>UnitNorm </option>
+        </select>
+    </div>
+    <div class="parameter">
+        Zero masking?
+        <input type="radio" name="mask-zero" id=""> Yes
+        <input type="radio" name="mask-zero" id=""> No
+    </div>
+    <div class="parameter">
+        LoRA rank:
+        <input type="number"/>
+    </div>
+</div>
+
+Masking
+===============
+<div id="param-ctrl-panel-header" class="header">Masking</div>
+<div id="param-ctrl-panel-main">
+    <div class="parameter">
+        Masking value:
+        <input type="number" name="" id="" step="any"/>
+    </div>
+</div>
+
+Lambda
+===============
+<div id="param-ctrl-panel-header" class="header">Lambda</div>
+<div id="param-ctrl-panel-main">
+    <div id="lambda-eq-preview" class="parameter">
+        <!-- <small>Please enter an equation below using TeX syntax.</small> -->
+    </div>
+    <div class="parameter">
+        Function:
+        <input type="text" name="lambda-input-eq" id="lambda-input-eq">
+    </div>
+    <div class="parameter">
+        Output shape:
+        <input type="text" name="" id="">
+    </div>
+    Mask:
+    <input type="hidden" name="">
+</div>
+
+Convolution
+=================
+<div id="param-ctrl-panel-header" class="header">Convolution</div>
+                <div id="param-ctrl-panel-main">
+                    <div class="parameter">
+                        Dimensionality:
+                        <input type="radio" name="conv-dims" id=""> 1D
+                        <input type="radio" name="conv-dims" id=""> 2D
+                        <input type="radio" name="conv-dims" id=""> 3D
+                    </div>
+                    <div class="parameter">
+                        Filters:
+                        <input type="number" name="" id="">
+                    </div>
+                    <div class="parameter">
+                        Kernel size:
+                        <input type="number" name="" id="">
+                    </div>
+                    <div class="parameter">
+                        Strides:
+                        <input type="number" name="" id="">
+                    </div>
+                    <div class="parameter">
+                        Padding:
+                        <input type="radio" name="conv-padding" id=""> Same
+                        <input type="radio" name="conv-padding" id=""> Valid
+                    </div>
+                    <div class="parameter">
+                        Data format:
+                        <input type="radio" name="" id=""> Channels first
+                        <input type="radio" name="" id=""> Channels last
+                    </div>
+                    <div class="parameter">
+                        Dilation rate:
+                        <input type="number" name="" id="">
+                    </div>
+                    <div class="parameter">
+                        Groups:
+                        <input type="number" name="" id="" min="1">
+                    </div>
+                    <div class="parameter">
+                        Activation:
+                        <select>
+                            <option>relu</option>
+                            <option>sigmoid</option>
+                            <option>softmax</option>
+                            <option>softplus</option>
+                            <option>softsign</option>
+                            <option>tanh</option>
+                            <option>selu</option>
+                            <option>elu</option>
+                            <option>exponential</option>
+                            <option>leaky_relu</option>
+                            <option>relu6</option>
+                            <option>silu</option>
+                            <option>hard_silu</option>
+                            <option>gelu</option>
+                            <option>hard_sigmoid</option>
+                            <option>linear</option>
+                            <option>mish</option>
+                            <option>log_softmax </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias?
+                        <input type="radio" name="dense-bias" /> Yes
+                        <input type="radio" name="dense-bias" /> No
+                    </div>
+                    <div class="parameter">
+                        Kernel initializer:
+                        <select>
+                            <option>RandomNormal</option>
+                            <option>RandomUniform</option>
+                            <option>TruncatedNormal</option>
+                            <option>Zeros</option>
+                            <option>Ones</option>
+                            <option>GlorotNormal</option>
+                            <option selected>GlorotUniform</option>
+                            <option>HeNormal</option>
+                            <option>HeUniform</option>
+                            <option>OrthogonalInitializer</option>
+                            <option>Constant</option>
+                            <option>VarianceScaling</option>
+                            <option>LecunNormal</option>
+                            <option>LecunUniform</option>
+                            <option>Identity </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias initializer:
+                        <select>
+                            <option>RandomNormal</option>
+                            <option>RandomUniform</option>
+                            <option>TruncatedNormal</option>
+                            <option selected>Zeros</option>
+                            <option>Ones</option>
+                            <option>GlorotNormal</option>
+                            <option>GlorotUniform</option>
+                            <option>HeNormal</option>
+                            <option>HeUniform</option>
+                            <option>OrthogonalInitializer</option>
+                            <option>Constant</option>
+                            <option>VarianceScaling</option>
+                            <option>LecunNormal</option>
+                            <option>LecunUniform</option>
+                            <option>Identity </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Kernel regularizer:
+                        <select>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias regularizer:
+                        <select>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Activity regularizer:
+                        <select>
+                            <option>None</option>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Kernel constraints:
+                        <select>
+                            <option>None</option>
+                            <option>Constraint</option>
+                            <option>MaxNorm</option>
+                            <option>MinMaxNorm</option>
+                            <option>NonNeg</option>
+                            <option>UnitNorm </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias constraints:
+                        <select>
+                            <option>Constraint</option>
+                            <option>MaxNorm</option>
+                            <option>MinMaxNorm</option>
+                            <option>NonNeg</option>
+                            <option>UnitNorm </option>
+                        </select>
+                    </div>
+                </div>
+
+Convolution (Separable)
+=============================
+<div id="param-ctrl-panel-header" class="header">Convolution (Separable)</div>
+                <div id="param-ctrl-panel-main">
+                    <div class="parameter">
+                        Dimensionality:
+                        <input type="radio" name="conv-dims" id=""> 1D
+                        <input type="radio" name="conv-dims" id=""> 2D
+                    </div>
+                    <div class="parameter">
+                        Filters:
+                        <input type="number" name="" id="">
+                    </div>
+                    <div class="parameter">
+                        Kernel size:
+                        <input type="number" name="" id="">
+                    </div>
+                    <div class="parameter">
+                        Strides:
+                        <input type="number" name="" id="">
+                    </div>
+                    <div class="parameter">
+                        Padding:
+                        <input type="radio" name="conv-padding" id=""> Same
+                        <input type="radio" name="conv-padding" id=""> Valid
+                    </div>
+                    <div class="parameter">
+                        Data format:
+                        <input type="radio" name="" id=""> Channels first
+                        <input type="radio" name="" id=""> Channels last
+                    </div>
+                    <div class="parameter">
+                        Dilation rate:
+                        <input type="number" name="" id="">
+                    </div>
+                    <div class="parameter">
+                        Depth multiplier:
+                        <input type="number" name="" id="" min="1">
+                    </div>
+                    <div class="parameter">
+                        Activation:
+                        <select>
+                            <option>relu</option>
+                            <option>sigmoid</option>
+                            <option>softmax</option>
+                            <option>softplus</option>
+                            <option>softsign</option>
+                            <option>tanh</option>
+                            <option>selu</option>
+                            <option>elu</option>
+                            <option>exponential</option>
+                            <option>leaky_relu</option>
+                            <option>relu6</option>
+                            <option>silu</option>
+                            <option>hard_silu</option>
+                            <option>gelu</option>
+                            <option>hard_sigmoid</option>
+                            <option>linear</option>
+                            <option>mish</option>
+                            <option>log_softmax </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias?
+                        <input type="radio" name="dense-bias" /> Yes
+                        <input type="radio" name="dense-bias" /> No
+                    </div>
+                    <div class="parameter">
+                        Depthwise initializer:
+                        <select>
+                            <option>RandomNormal</option>
+                            <option>RandomUniform</option>
+                            <option>TruncatedNormal</option>
+                            <option>Zeros</option>
+                            <option>Ones</option>
+                            <option>GlorotNormal</option>
+                            <option selected>GlorotUniform</option>
+                            <option>HeNormal</option>
+                            <option>HeUniform</option>
+                            <option>OrthogonalInitializer</option>
+                            <option>Constant</option>
+                            <option>VarianceScaling</option>
+                            <option>LecunNormal</option>
+                            <option>LecunUniform</option>
+                            <option>Identity </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Pointwise initializer:
+                        <select>
+                            <option>RandomNormal</option>
+                            <option>RandomUniform</option>
+                            <option>TruncatedNormal</option>
+                            <option>Zeros</option>
+                            <option>Ones</option>
+                            <option>GlorotNormal</option>
+                            <option selected>GlorotUniform</option>
+                            <option>HeNormal</option>
+                            <option>HeUniform</option>
+                            <option>OrthogonalInitializer</option>
+                            <option>Constant</option>
+                            <option>VarianceScaling</option>
+                            <option>LecunNormal</option>
+                            <option>LecunUniform</option>
+                            <option>Identity </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias initializer:
+                        <select>
+                            <option>RandomNormal</option>
+                            <option>RandomUniform</option>
+                            <option>TruncatedNormal</option>
+                            <option selected>Zeros</option>
+                            <option>Ones</option>
+                            <option>GlorotNormal</option>
+                            <option>GlorotUniform</option>
+                            <option>HeNormal</option>
+                            <option>HeUniform</option>
+                            <option>OrthogonalInitializer</option>
+                            <option>Constant</option>
+                            <option>VarianceScaling</option>
+                            <option>LecunNormal</option>
+                            <option>LecunUniform</option>
+                            <option>Identity </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Depthwise regularizer:
+                        <select>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Pointwise regularizer:
+                        <select>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias regularizer:
+                        <select>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Activity regularizer:
+                        <select>
+                            <option>None</option>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Depthwise constraints:
+                        <select>
+                            <option>None</option>
+                            <option>Constraint</option>
+                            <option>MaxNorm</option>
+                            <option>MinMaxNorm</option>
+                            <option>NonNeg</option>
+                            <option>UnitNorm </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Pointwise constraints:
+                        <select>
+                            <option>None</option>
+                            <option>Constraint</option>
+                            <option>MaxNorm</option>
+                            <option>MinMaxNorm</option>
+                            <option>NonNeg</option>
+                            <option>UnitNorm </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias constraints:
+                        <select>
+                            <option>Constraint</option>
+                            <option>MaxNorm</option>
+                            <option>MinMaxNorm</option>
+                            <option>NonNeg</option>
+                            <option>UnitNorm </option>
+                        </select>
+                    </div>
+                </div>
+
+Convolution (Depthwise)
+============================
+<div id="param-ctrl-panel-header" class="header">Convolution (Depthwise)</div>
+                <div id="param-ctrl-panel-main">
+                    <div class="parameter">
+                        Dimensionality:
+                        <input type="radio" name="conv-dims" id=""> 1D
+                        <input type="radio" name="conv-dims" id=""> 2D
+                    </div>
+                    <div class="parameter">
+                        Kernel size:
+                        <input type="number" name="" id="">
+                    </div>
+                    <div class="parameter">
+                        Strides:
+                        <input type="number" name="" id="">
+                    </div>
+                    <div class="parameter">
+                        Padding:
+                        <input type="radio" name="conv-padding" id=""> Same
+                        <input type="radio" name="conv-padding" id=""> Valid
+                    </div>
+                    <div class="parameter">
+                        Data format:
+                        <input type="radio" name="" id=""> Channels first
+                        <input type="radio" name="" id=""> Channels last
+                    </div>
+                    <div class="parameter">
+                        Dilation rate:
+                        <input type="number" name="" id="">
+                    </div>
+                    <div class="parameter">
+                        Depth multiplier:
+                        <input type="number" name="" id="" min="1">
+                    </div>
+                    <div class="parameter">
+                        Activation:
+                        <select>
+                            <option>relu</option>
+                            <option>sigmoid</option>
+                            <option>softmax</option>
+                            <option>softplus</option>
+                            <option>softsign</option>
+                            <option>tanh</option>
+                            <option>selu</option>
+                            <option>elu</option>
+                            <option>exponential</option>
+                            <option>leaky_relu</option>
+                            <option>relu6</option>
+                            <option>silu</option>
+                            <option>hard_silu</option>
+                            <option>gelu</option>
+                            <option>hard_sigmoid</option>
+                            <option>linear</option>
+                            <option>mish</option>
+                            <option>log_softmax </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias?
+                        <input type="radio" name="dense-bias" /> Yes
+                        <input type="radio" name="dense-bias" /> No
+                    </div>
+                    <div class="parameter">
+                        Depthwise initializer:
+                        <select>
+                            <option>RandomNormal</option>
+                            <option>RandomUniform</option>
+                            <option>TruncatedNormal</option>
+                            <option>Zeros</option>
+                            <option>Ones</option>
+                            <option>GlorotNormal</option>
+                            <option selected>GlorotUniform</option>
+                            <option>HeNormal</option>
+                            <option>HeUniform</option>
+                            <option>OrthogonalInitializer</option>
+                            <option>Constant</option>
+                            <option>VarianceScaling</option>
+                            <option>LecunNormal</option>
+                            <option>LecunUniform</option>
+                            <option>Identity </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias initializer:
+                        <select>
+                            <option>RandomNormal</option>
+                            <option>RandomUniform</option>
+                            <option>TruncatedNormal</option>
+                            <option selected>Zeros</option>
+                            <option>Ones</option>
+                            <option>GlorotNormal</option>
+                            <option>GlorotUniform</option>
+                            <option>HeNormal</option>
+                            <option>HeUniform</option>
+                            <option>OrthogonalInitializer</option>
+                            <option>Constant</option>
+                            <option>VarianceScaling</option>
+                            <option>LecunNormal</option>
+                            <option>LecunUniform</option>
+                            <option>Identity </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Depthwise regularizer:
+                        <select>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias regularizer:
+                        <select>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Activity regularizer:
+                        <select>
+                            <option>None</option>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Depthwise constraints:
+                        <select>
+                            <option>None</option>
+                            <option>Constraint</option>
+                            <option>MaxNorm</option>
+                            <option>MinMaxNorm</option>
+                            <option>NonNeg</option>
+                            <option>UnitNorm </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias constraints:
+                        <select>
+                            <option>Constraint</option>
+                            <option>MaxNorm</option>
+                            <option>MinMaxNorm</option>
+                            <option>NonNeg</option>
+                            <option>UnitNorm </option>
+                        </select>
+                    </div>
+                </div>
+
+Convolution (Transposed)
+============================
+<div id="param-ctrl-panel-header" class="header">Convolution (Transposed)</div>
+                <div id="param-ctrl-panel-main">
+                    <div class="parameter">
+                        Dimensionality:
+                        <input type="radio" name="conv-dims" id=""> 1D
+                        <input type="radio" name="conv-dims" id=""> 2D
+                        <input type="radio" name="conv-dims" id=""> 3D
+                    </div>
+                    <div class="parameter">
+                        Filters:
+                        <input type="number" name="" id="">
+                    </div>
+                    <div class="parameter">
+                        Kernel size:
+                        <input type="number" name="" id="">
+                    </div>
+                    <div class="parameter">
+                        Strides:
+                        <input type="number" name="" id="">
+                    </div>
+                    <div class="parameter">
+                        Padding:
+                        <input type="radio" name="conv-padding" id=""> Same
+                        <input type="radio" name="conv-padding" id=""> Valid
+                    </div>
+                    <div class="parameter">
+                        Data format:
+                        <input type="radio" name="" id=""> Channels first
+                        <input type="radio" name="" id=""> Channels last
+                    </div>
+                    <div class="parameter">
+                        Dilation rate:
+                        <input type="number" name="" id="">
+                    </div>
+                    <div class="parameter">
+                        Activation:
+                        <select>
+                            <option>relu</option>
+                            <option>sigmoid</option>
+                            <option>softmax</option>
+                            <option>softplus</option>
+                            <option>softsign</option>
+                            <option>tanh</option>
+                            <option>selu</option>
+                            <option>elu</option>
+                            <option>exponential</option>
+                            <option>leaky_relu</option>
+                            <option>relu6</option>
+                            <option>silu</option>
+                            <option>hard_silu</option>
+                            <option>gelu</option>
+                            <option>hard_sigmoid</option>
+                            <option>linear</option>
+                            <option>mish</option>
+                            <option>log_softmax </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias?
+                        <input type="radio" name="dense-bias" /> Yes
+                        <input type="radio" name="dense-bias" /> No
+                    </div>
+                    <div class="parameter">
+                        Kernel initializer:
+                        <select>
+                            <option>RandomNormal</option>
+                            <option>RandomUniform</option>
+                            <option>TruncatedNormal</option>
+                            <option>Zeros</option>
+                            <option>Ones</option>
+                            <option>GlorotNormal</option>
+                            <option selected>GlorotUniform</option>
+                            <option>HeNormal</option>
+                            <option>HeUniform</option>
+                            <option>OrthogonalInitializer</option>
+                            <option>Constant</option>
+                            <option>VarianceScaling</option>
+                            <option>LecunNormal</option>
+                            <option>LecunUniform</option>
+                            <option>Identity </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias initializer:
+                        <select>
+                            <option>RandomNormal</option>
+                            <option>RandomUniform</option>
+                            <option>TruncatedNormal</option>
+                            <option selected>Zeros</option>
+                            <option>Ones</option>
+                            <option>GlorotNormal</option>
+                            <option>GlorotUniform</option>
+                            <option>HeNormal</option>
+                            <option>HeUniform</option>
+                            <option>OrthogonalInitializer</option>
+                            <option>Constant</option>
+                            <option>VarianceScaling</option>
+                            <option>LecunNormal</option>
+                            <option>LecunUniform</option>
+                            <option>Identity </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Kernel regularizer:
+                        <select>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias regularizer:
+                        <select>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Activity regularizer:
+                        <select>
+                            <option>None</option>
+                            <option value="">Base</option>
+                            <option value="">L1</option>
+                            <option value="">L2</option>
+                            <option value="">L1L2</option>
+                            <option value="">OrthogonalRegularizer</option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Kernel constraint:
+                        <select>
+                            <option>None</option>
+                            <option>Constraint</option>
+                            <option>MaxNorm</option>
+                            <option>MinMaxNorm</option>
+                            <option>NonNeg</option>
+                            <option>UnitNorm </option>
+                        </select>
+                    </div>
+                    <div class="parameter">
+                        Bias constraint:
+                        <select>
+                            <option>Constraint</option>
+                            <option>MaxNorm</option>
+                            <option>MinMaxNorm</option>
+                            <option>NonNeg</option>
+                            <option>UnitNorm </option>
+                        </select>
+                    </div>
+                </div>
+
+Max Pooling
+==================
+<div id="param-ctrl-panel-header" class="header">Max Pooling</div>
+                <div id="param-ctrl-panel-main">
+                    <div class="parameter">
+                        Dimensionality:
+                        <input type="radio" name="pool-dim" id=""> 1D
+                        <input type="radio" name="pool-dim" id=""> 2D
+                        <input type="radio" name="pool-dim" id=""> 3D
+                    </div>
+                    <div class="parameter">
+                        Pool size:
+                        <input type="number" name="" id="">
+                    </div>
+                    <div class="parameter">
+                        Strides:
+                        <input type="number" name="" id="">
+                    </div>
+                    <div class="parameter">
+                        Padding:
+                        <input type="radio" name="pool-padding" id=""> Same
+                        <input type="radio" name="pool-padding" id=""> Valid
+                    </div>
+                    <div class="parameter">
+                        Data format:
+                        <input type="radio" name="" id=""> Channels first
+                        <input type="radio" name="" id=""> Channels last
+                    </div>
+                </div>
+
+Average Pooling
+====================
+<div id="param-ctrl-panel-header" class="header">Average Pooling</div>
+<div id="param-ctrl-panel-main">
+    <div class="parameter">
+        Dimensionality:
+        <input type="radio" name="pool-dim" id=""> 1D
+        <input type="radio" name="pool-dim" id=""> 2D
+        <input type="radio" name="pool-dim" id=""> 3D
+    </div>
+    <div class="parameter">
+        Pool size:
+        <input type="number" name="" id="">
+    </div>
+    <div class="parameter">
+        Strides:
+        <input type="number" name="" id="">
+    </div>
+    <div class="parameter">
+        Padding:
+        <input type="radio" name="pool-padding" id=""> Same
+        <input type="radio" name="pool-padding" id=""> Valid
+    </div>
+    <div class="parameter">
+        Data format:
+        <input type="radio" name="" id=""> Channels first
+        <input type="radio" name="" id=""> Channels last
+    </div>
+</div>
+
+Max Pooling (Global)
+=======================
+<div id="param-ctrl-panel-header" class="header">Max Pooling (Global)</div>
+<div id="param-ctrl-panel-main">
+    <div class="parameter">
+        Dimensionality:
+        <input type="radio" name="pool-dim" id=""> 1D
+        <input type="radio" name="pool-dim" id=""> 2D
+        <input type="radio" name="pool-dim" id=""> 3D
+    </div>
+    <div class="parameter">
+        Data format:
+        <input type="radio" name="" id=""> Channels first
+        <input type="radio" name="" id=""> Channels last
+    </div>
+    <div class="parameter">
+        Keep temporal dimension?
+        <input type="radio" name="gpool-keepdims" id=""> Yes
+        <input type="radio" name="gpool-keepdims" id=""> No
+    </div>
+</div>
+
+Average Pooling (Global)
+=======================
+<div id="param-ctrl-panel-header" class="header">Average Pooling (Global)</div>
+<div id="param-ctrl-panel-main">
+    <div class="parameter">
+        Dimensionality:
+        <input type="radio" name="pool-dim" id=""> 1D
+        <input type="radio" name="pool-dim" id=""> 2D
+        <input type="radio" name="pool-dim" id=""> 3D
+    </div>
+    <div class="parameter">
+        Data format:
+        <input type="radio" name="" id=""> Channels first
+        <input type="radio" name="" id=""> Channels last
+    </div>
+    <div class="parameter">
+        Keep temporal dimension?
+        <input type="radio" name="gpool-keepdims" id=""> Yes
+        <input type="radio" name="gpool-keepdims" id=""> No
+    </div>
+</div>
+
