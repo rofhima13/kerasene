@@ -84,24 +84,15 @@ Layers MUST be represented as color-coded horizontally-long building blocks as f
 - Embedding layers are represented in <span style="color: white; background-color: rgb(0, 54, 202);">blue</span>.
 - Masking layers are represented in <span style="color: white; background-color: black">black</span>.
 - Lambda layers are represented in <span style="color: white; background-color: rgb(222, 161, 222);">pink</span>.
-
-<style>
-.nn-layer {
-  background-color: rgb(240, 176, 1);;
+- 
+<div align="center">
+    <div class="nn-layer" style="background-color: rgb(240, 176, 1);
   width: 300px;
   padding: 20px;
   color: white;
   box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
   font-weight: bold;
-  margin: 2px;
-}
-
-.nn-layer:hover {
-  outline: 2px solid white;
-}
-</style>
-<div align="center">
-    <div class="nn-layer">
+  margin: 2px;">
         Dense
     </div>
     <p>Representation of a Dense layer (as of version 1.0).</p>
