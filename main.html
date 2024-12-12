@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="styles/out/layers.css" />
 
     <!-- MathJax -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <!-- Favicon -->
@@ -70,12 +69,8 @@
                     <div class="browser-child">
                         <button class="browser-leaf browser-item browser-component browser-input-layer clickable" draggable="true">Input</button>
                         <button class="browser-leaf browser-item browser-component browser-dense-layer clickable" draggable="true">Dense</button>
-                        <button class="browser-leaf browser-item browser-component browser-activation-layer clickable" draggable="true">
-                            Activation
-                        </button>
-                        <button class="browser-leaf browser-item browser-component browser-embedding-layer clickable" draggable="true">
-                            Embedding
-                        </button>
+                        <button class="browser-leaf browser-item browser-component browser-activation-layer clickable" draggable="true">Activation</button>
+                        <button class="browser-leaf browser-item browser-component browser-embedding-layer clickable" draggable="true">Embedding</button>
                         <button class="browser-leaf browser-item browser-component browser-masking-layer clickable" draggable="true">Masking</button>
                         <button class="browser-leaf browser-item browser-component browser-lambda-layer clickable" draggable="true">Lambda</button>
                     </div>
@@ -239,31 +234,10 @@
                 <div id="resize-model-sheet" class="resize-x">
                     <i class="fa-solid fa-ellipsis"></i>
                 </div>
-                <div id="param-ctrl-panel-header" class="header">Max Pooling</div>
-                <div id="param-ctrl-panel-main">
-                    <div class="parameter">
-                        Dimensionality:
-                        <input type="radio" name="pool-dim" id=""> 1D
-                        <input type="radio" name="pool-dim" id=""> 2D
-                        <input type="radio" name="pool-dim" id=""> 3D
-                    </div>
-                    <div class="parameter">
-                        Pool size:
-                        <input type="number" name="" id="">
-                    </div>
-                    <div class="parameter">
-                        Strides:
-                        <input type="number" name="" id="">
-                    </div>
-                    <div class="parameter">
-                        Padding:
-                        <input type="radio" name="pool-padding" id=""> Same
-                        <input type="radio" name="pool-padding" id=""> Valid
-                    </div>
-                    <div class="parameter">
-                        Data format:
-                        <input type="radio" name="" id=""> Channels first
-                        <input type="radio" name="" id=""> Channels last
+                <div id="param-ctrl-panel-content">
+                    <div id="param-ctrl-panel-header" class="header">Hyperparameter Control Panel</div>
+                    <div id="param-ctrl-panel-main">
+                        Open a layer to get started.
                     </div>
                 </div>
                 
