@@ -1,12 +1,8 @@
-# Kerasene: Deep Learning for people
+# Kerasene: Deep Learning for Everyone
 
 ![image](https://github.com/user-attachments/assets/5ea71289-6559-417b-82cc-67b410f2982d)
 
-
-The key words "[MUST]", "[MUST NOT]", "[REQUIRED][MUST]", "[SHALL][MUST]", "[SHALL
-NOT][MUST NOT]", "[SHOULD]", "[SHOULD NOT]", "[RECOMMENDED][SHOULD]",  "[MAY]", and
-"[OPTIONAL][MAY]" in this document are to be interpreted as described in
-[RFC 2119].
+The terms "[MUST]", "[MUST NOT]", "[REQUIRED][MUST]", "[SHALL][MUST]", "[SHALL NOT][MUST NOT]", "[SHOULD]", "[SHOULD NOT]", "[RECOMMENDED][SHOULD]", "[MAY]", and "[OPTIONAL][MAY]" used throughout this document are to be interpreted as outlined in [RFC 2119].
 
 [RFC 2119]: https://tools.ietf.org/html/rfc2119
 [MUST]: https://tools.ietf.org/html/rfc2119#section-1
@@ -15,185 +11,131 @@ NOT][MUST NOT]", "[SHOULD]", "[SHOULD NOT]", "[RECOMMENDED][SHOULD]",  "[MAY]", 
 [SHOULD NOT]: https://tools.ietf.org/html/rfc2119#section-4
 [MAY]: https://tools.ietf.org/html/rfc2119#section-5
 
-## Quick links
+## Quick Links
 - [Foreword](#foreword)
-- [Getting started](#getting-started)
-- [Navigating the repository](#navigating-the-repository)
-- [Tech stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Repository Overview](#repository-overview)
+- [Technology Stack](#technology-stack)
 
 ## Foreword
-Kerasene is intended to serve as the first true deep learning studio for [Keras](https://keras.io), a deep learning framework for Python.
+Kerasene is designed to be the first comprehensive deep learning studio for [Keras](https://keras.io), a Python-based deep learning framework.
 
-Sony has already implememented an excellent neural network studio, that you can take a look at [here](https://dl.sony.com). Much of Kerasene's implementation aims to take inspiration from the  I had thought of this idea independently without the knowledge of Sony's implementation. Upon further research, I discovered that a few deep learning consoles already exist. Although they are all technologically impressive, they are either closed-source, proprietary, exclusive to proprietary operating systems, or simply do not possess the type of workflow that I sought for such frameworks.
+Sony has already introduced an impressive neural network studio, which you can explore [here](https://dl.sony.com). While Kerasene draws inspiration from this implementation, the idea for Kerasene originated independently. Further research revealed the existence of several deep learning consoles. Although technologically advanced, they are often closed-source, proprietary, restricted to specific operating systems, or lacking in workflow flexibility.
 
-Kerasene was created to be an elegant, graphical deep learning framework that is free, open-source that anyone can use and edit. The user should be able to utilise Keras and its features to the fullest extent without having to write a single line of code.
+Kerasene aims to be an intuitive, graphical, open-source deep learning framework that empowers users to fully utilise Keras' capabilities without needing to write code.
 
 ## Specification
 
-Before you continue, I recommend that you familiarise yourself with deep learning to elucidate some technical concepts that will be discussed henceforth. From this point on, it will be assumed that you have a foundational understanding of how neural networks operate.
+Before proceeding, it is recommended that you have a foundational understanding of deep learning concepts, as technical details will follow. This document assumes familiarity with neural network principles.
 
-A typical deep learning workflow looks like this: you have a dataset and a task you would like to perform on that dataset. As an engineer, you choose an architecture that is best suited for the task. You load the dataset into the model and train, test it. Great!
+A typical deep learning workflow involves starting with a dataset and a task to be performed. The engineer selects a suitable architecture, loads the dataset into the model, and trains and tests it. However, this process can be intricate, involving:
+- Tuning layer and model hyperparameters
+- Selecting activation functions, optimisation algorithms, and loss functions
+- Evaluating model performance
 
-However, there is a lot of complexity and nuance in this process. You must tune layer hyperparameters, model training hyperparameters, choose activation functions,
-an optimisation algorithm, a loss function, evaluate model performance...it is arduous. Therefore, as a mathematician, it is daunting to learn how to write code. As a programmer, it is daunting to have to learn how to do the math. Keras only solves half the problem.
+For mathematicians, coding can be overwhelming, and for programmers, learning the underlying mathematics can be daunting. Keras partially addresses this challenge, but Kerasene aims to fill the gap entirely.
 
 ### From Keras to Kerasene
 
-Keras contains a vast number of APIs that do different things. For now, only the Core layers will matter.
+Keras provides an extensive range of APIs. For now, only the Core layers will be relevant.
 
-Because of the vast ways that data can be structured, Kerasene MUST accept training and testing data that follows a standard format.
+Due to the diversity of data structures, Kerasene **MUST** accept training and testing data in a standardised format.
 
-### UI elements
+### User Interface Elements
 
-#### Top bar
-
-The top bar MUST contain the application's logo, as well as a menu bar that appears when the header is hovered upon that follows the following structure:
+#### Top Bar
+The top bar **MUST** feature the application logo and a menu bar, appearing on hover, with the following structure:
 - File
-    - New
-    - Open
-    - Save
+  - New
+  - Open
+  - Save
 - Edit
-    - Undo
-    - Redo
-    - Cut
-    - Copy
-    - Paste
+  - Undo
+  - Redo
+  - Cut
+  - Copy
+  - Paste
 - Help
-    - Documentation
-    - View License
-    - About
+  - Documentation
+  - View Licence
+  - About
 
 #### Browser
-
-The browser MUST be able to be used to navigate the Keras API's library. When an API element is clicked on (such as a layer), that element MUST appear in the editor.
+The browser **MUST** enable navigation through the Keras API library. Clicking on an API element (e.g., a layer) should add it to the editor.
 
 #### Editor
+- All editor elements **MUST** use absolute positioning.
+- The editor **MUST** support scrolling in all directions and independent zooming.
+- The editor **SHOULD** have infinite size.
 
-- All elements in the editor MUST use absolute positioning.
-- The editor MUST be able to scroll in both directions and zoom in or out independently of the rest of the user interface.
-- The editor SHOULD be infinite in size .
+#### Control Panel
+A control panel **MUST** allow manipulation of layer parameters and be located at the bottom of the screen.
 
-#### Control panel
-A control panel is REQUIRED to manipulate layer parameters and MUST be located at the bottom of the screen.
+#### Layer Representation
+Layers **MUST** be displayed as colour-coded, horizontally elongated blocks:
+- Input layers: <span style="color: white; background-color: rgb(245, 46, 0);">red</span>
+- Dense layers: <span style="color: white; background-color: rgb(240, 176, 1);">gold</span>
+- Regularisation layers: <span style="color: white; background-color: rgb(36, 179, 223);">cyan</span>
+- Activation layers: <span style="color: white; background-color: rgb(0, 179, 48);">green</span>
+- Embedding layers: <span style="color: white; background-color: rgb(0, 54, 202);">blue</span>
+- Masking layers: <span style="color: white; background-color: black">black</span>
+- Lambda layers: <span style="color: white; background-color: rgb(222, 161, 222);">pink</span>
 
-#### Layer behaviour
-Layers MUST be represented as color-coded horizontally-long building blocks as follows:
-- Input layers are represented in <span style="color: white; background-color: rgb(245, 46, 0);">red</span>.
-- Dense layers are represented in <span style="color: white; background-color: rgb(240, 176, 1);">gold</span>.
-- Regularisation layers are represented in <span style="color: white; background-color: rgb(36, 179, 223);">cyan</span>.
-- Activation layers are represented in <span style="color: white; background-color: rgb(0, 179, 48);">green</span>.
-- Embedding layers are represented in <span style="color: white; background-color: rgb(0, 54, 202);">blue</span>.
-- Masking layers are represented in <span style="color: white; background-color: black">black</span>.
-- Lambda layers are represented in <span style="color: white; background-color: rgb(222, 161, 222);">pink</span>.
-- 
-<div align="center">
-    <div class="nn-layer" style="background-color: rgb(240, 176, 1);
-  width: 300px;
-  padding: 20px;
-  color: white;
-  box-shadow: inset 0px 2px 2px rgba(0, 0, 0, 0.25);
-  font-weight: bold;
-  margin: 2px;">
-        Dense
-    </div>
-    <p>Representation of a Dense layer (as of version 1.0).</p>
-</div>
+Additional layer types, including convolution and pooling layers, will be introduced in future versions.
 
-More types will be added over time, namely, but not limited to:
-- Convolution layers
-- Pooling layers
-- Any other layer type that has not been covered yet.
+Layer-specific functionality includes:
+- Displaying tooltips with API documentation and Keras attribution when hovered over.
+- Supporting drag-and-drop operations for repositioning.
+- Displaying current hyperparameter settings in the control panel when clicked.
 
-- When a layer is hovered upon, a tooltip that elucidates the layer and explains it in the context of API documentation MUST be displayed. Attribution to Keras MUST be given.
-- Layers MUST be able to be dragged and dropped to any position on the editor.
-- When a layer is clicked, the control panel MUST display the current hyperparameter settings for that layer.
+#### Model Representation
+- Models **MUST** be depicted as topological graphs with layers as interlinked nodes.
+- Models **MUST** support complete functionality and **SHALL NOT** rely on the Sequential API.
+- Nodes (layers) **MUST** interconnect with lines showing data flow direction.
 
+## Getting Started
+The project is in its early stages. Clone the repository and run the HTML file to explore the current features (and bugs). Your suggestions for improvement are welcome!
 
-#### Model behaviour
+## Repository Overview
 
-- Models MUST be represented as topological graphs with layers as interlinking nodes.
-- Models MUST be completely functional. The Sequential API SHALL NOT be supported.
-- Layers (nodes) MUST interconnect using lines that indicate the direction of data flow.
+- **js/**: Contains JavaScript files.
+  - **main.js**: Core JavaScript functionality.
+- **styles/**: Contains style-related files.
+  - **out/**: Compiled output files.
+    - **main.css**: Compiled CSS.
+  - **main.scss**: Source SCSS (Sass) file for styling.
+- **utils/**: Contains utility scripts.
+  - **build-sass.sh**: Shell script for compiling Sass files.
+- **.gitignore**: Lists files to exclude from version control.
+- **LICENSE**: Details software licensing.
+- **main.html**: Main HTML file.
+- **README.md**: Project overview.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Getting started
-Right now, we are **very** early into development. By cloning this repository and running the HTML file, you can take a look at all the ~~bugs~~ features that Kerasene has to offer at the moment and see which direction the project is taking. Any suggestions you might have moving forward would be highly appreciated!
-
-## Navigating the repository
-
-- js/ : Directory containing JavaScript files.
-    - main.js : JavaScript file for main functionality.
-
-- styles/ : Directory containing style-related files.
-    - out/ : Directory containing compiled output files.
-        - main.css : Compiled CSS file.
-    - main.scss : SCSS (Sass) file for main styling.
-
-- utils/ : Directory containing utility scripts.
-    - build-sass.sh : Shell script for building Sass files.
-
-- .gitignore : File specifying intentionally untracked files to ignore in version control.
-
-- LICENSE : File containing the software license information.
-
-- main.html : HTML file for the main webpage.
-
-- README.md : Markdown file containing information about the project.
-
-So far, there are only a few files you need to worry about: the HTML, CSS, Sass, and JS files. The utils folder contains a tool to compile the Sass files. [Ensure that you have Sass installed.](https://sass-lang.com/install)
-
-At the moment, within the HTML file, you will find:
-- Links to the spreadsheet and JavaScript code
-- Remote links to [Font Awesome](https://fontawesome.com) and [Google Fonts](https://fonts.google.com).
-- Spaghetti code, lots of it. Be sure to bring a fork!
+The key files to focus on are the HTML, CSS, Sass, and JavaScript files. The **utils/** folder contains a tool for compiling Sass files. [Install Sass here](https://sass-lang.com/install).
 
 ## Specifications
+
 ### Frontend
-- HTML, CSS, JavaScript is REQUIRED.
-- React MAY be used in future.
-- Node.js SHALL be used if the above possibility is realised.
+- HTML, CSS, and JavaScript are **REQUIRED**.
+- React **MAY** be integrated in the future.
+- Node.js **SHALL** be utilised if React is implemented.
 
 ### Design
-- There MUST be a near one-to-one correspondence with the frontend's components and the Keras API.
-- The neural network structure MUST be a tree-like structure with movable nodes, curved edges and branching capability.
-- There MUST be a control panel that can be used to manipulate layer and model hyperparameters.
+- The frontend components **MUST** closely align with Keras API functionality.
+- Neural network structures **MUST** be tree-like with movable nodes, curved edges, and branching.
+- A control panel **MUST** allow for hyperparameter manipulation.
 
 ### Backend
-- Keras MUST run on Python in the backend.
-- As of writing this line, Keras 3 is the latest version and can use TensorFlow, PyTorch, or JAX as backends. Kerasene MUST be developed with that in mind.
-- Keras MUST connect to a Python web backend that MUST be either Flask or Django.
-- The Electron framework MAY be used in future to run the application offline.
+- Keras **MUST** run on Python.
+- The latest Keras version (as of now, Keras 3) supports TensorFlow, PyTorch, or JAX backends; Kerasene **MUST** accommodate this.
+- A Python web backend using Flask or Django **MUST** be implemented.
+- The Electron framework **MAY** be explored for offline functionality.
 
 ### General
-- This application MUST be able to run on users' local machines as a web app, and/or on the cloud on a computer with GPU access.
-- Kerasene SHALL be a single-page application, so you MUST NOT create any other HTML files.
+- The application **MUST** operate as a web app on local machines and/or cloud platforms with GPU support.
+- Kerasene **SHALL** be a single-page application; additional HTML files **MUST NOT** be created.
 
-## Future work
-- Writing documentation once a working prototype exists, most probably with Mkdocs.
-- Anything that has not already been done.
+## Future Plans
+- Develop documentation once a working prototype is ready, likely using MkDocs.
+- Implement features not yet covered.
+
