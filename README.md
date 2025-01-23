@@ -1,6 +1,9 @@
 # Kerasene: Deep Learning for Everyone
 
 ![image](https://github.com/user-attachments/assets/5ea71289-6559-417b-82cc-67b410f2982d)
+Screenshot from Kerasene in its current state. Right now, only the Layers API has been graphically implemented.
+
+Visit Link: https://rofhima13.github.io/kerasene/
 
 The terms "[MUST]", "[MUST NOT]", "[REQUIRED][MUST]", "[SHALL][MUST]", "[SHALL NOT][MUST NOT]", "[SHOULD]", "[SHOULD NOT]", "[RECOMMENDED][SHOULD]", "[MAY]", and "[OPTIONAL][MAY]" used throughout this document are to be interpreted as outlined in [RFC 2119].
 
