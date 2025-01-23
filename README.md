@@ -1,5 +1,8 @@
 # Kerasene: Deep Learning for people
 
+![image](https://github.com/user-attachments/assets/5ea71289-6559-417b-82cc-67b410f2982d)
+
+
 The key words "[MUST]", "[MUST NOT]", "[REQUIRED][MUST]", "[SHALL][MUST]", "[SHALL
 NOT][MUST NOT]", "[SHOULD]", "[SHOULD NOT]", "[RECOMMENDED][SHOULD]",  "[MAY]", and
 "[OPTIONAL][MAY]" in this document are to be interpreted as described in
@@ -19,8 +22,6 @@ NOT][MUST NOT]", "[SHOULD]", "[SHOULD NOT]", "[RECOMMENDED][SHOULD]",  "[MAY]", 
 - [Tech stack](#tech-stack)
 
 ## Foreword
-If you're seeing this, congratulations! You are one of the first developers that will get to work on Kerasene. Thank you very much for volunteering your time to working on this project.
-
 Kerasene is intended to serve as the first true deep learning studio for [Keras](https://keras.io), a deep learning framework for Python.
 
 Sony has already implememented an excellent neural network studio, that you can take a look at [here](https://dl.sony.com). Much of Kerasene's implementation aims to take inspiration from the  I had thought of this idea independently without the knowledge of Sony's implementation. Upon further research, I discovered that a few deep learning consoles already exist. Although they are all technologically impressive, they are either closed-source, proprietary, exclusive to proprietary operating systems, or simply do not possess the type of workflow that I sought for such frameworks.
