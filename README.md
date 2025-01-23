@@ -1,4 +1,4 @@
-# Kerasene: Deep Learning for Everyone
+# Kerasene: Deep Learning for people
 
 ![image](https://github.com/user-attachments/assets/5ea71289-6559-417b-82cc-67b410f2982d)
 Screenshot from Kerasene in its current state. Right now, only the Layers API has been graphically implemented.
