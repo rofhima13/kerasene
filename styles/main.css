@@ -1,0 +1,162 @@
+/* Apply these styles for the ENTIRE viewport */
+html,
+body {
+  /* Remove default HTML padding */
+  margin: 0;
+  padding: 0;
+  /* Fix the dimensions of the screen */
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+  overflow-y: hidden;
+  overflow-x: hidden; }
+
+/* EVERY element in the document has these properties */
+body * {
+  font-family: "Cantarell", sans-serif;
+  transition-duration: 0.03s;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  user-select: none; }
+
+/* Set the display for the entire viewport */
+body {
+  background-color: #ece6e6;
+  display: flex;
+  flex-direction: column; }
+
+/* Every interactive element must be a part of this class. */
+.clickable {
+  cursor: pointer; }
+
+/* This is styling for the top red header. This sets the color
+ * of the bar and styles the logo typeface.
+ * We should look into replacing this with SVG text or a professionally designed logo. */
+#app-header {
+  background-color: white;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 50px;
+  position: sticky;
+  z-index: 1000;
+  /* Keep the contents of the header to the left. */
+  display: flex;
+  justify-content: left;
+  align-items: center; }
+
+/* Styling for the logo itself. */
+#logo {
+  font-size: 24px;
+  font-family: "Quicksand", sans-serif;
+  color: #303030;
+  font-weight: bold;
+  cursor: default;
+  user-select: none;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center; }
+
+#logo-img {
+  width: 25px;
+  filter: drop-shadow(1px 1px 0px rgba(0, 0, 0, 0.5));
+  margin: 10px 0;
+  margin-right: 10px; }
+
+.active {
+  background-color: rgba(0, 0, 0, 0.05); }
+
+#editor {
+  display: flex;
+  height: 100vh; }
+
+.resize-x {
+  cursor: row-resize;
+  /* Set cursor for resizing */
+  height: 6px;
+  width: 100%;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25); }
+
+.resize-y {
+  cursor: col-resize;
+  /* Set cursor for resizing */
+  height: 100%;
+  width: 6px;
+  box-shadow: 2px 0px 2px rgba(0, 0, 0, 0.25);
+  z-index: 10; }
+
+.resize-x,
+.resize-y {
+  background-color: #adadad;
+  color: #d6d6d6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  user-select: none;
+  font-size: 15px; }
+
+#model-sheet {
+  resize: vertical;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  text-wrap: nowrap;
+  height: initial;
+  width: 100%;
+  height: 100%; }
+
+#model-sheet * {
+  position: absolute;
+  cursor: move; }
+
+#model-viewer .nn-layer {
+  width: 300px; }
+
+#param-ctrl-panel {
+  background-color: #d6d6d6;
+  color: #3f3939;
+  position: absolute;
+  bottom: 0;
+  min-height: max-content;
+  max-height: 400px;
+  z-index: 0;
+  width: 100%; }
+
+#param-ctrl-panel-main {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  justify-content: center; }
+
+.parameter {
+  margin-bottom: 8px; }
+
+.header {
+  width: 100%;
+  margin: 2px;
+  padding: 5px;
+  font-weight: bold;
+  border-bottom: 2px solid #adadad;
+  box-shadow: inset -1px 0px 2px rgba(0, 0, 0, 0.5); }
+
+#param-ctrl-panel-header {
+  background-color: #f52e00;
+  color: white; }
+
+#viewer-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -500; }
+
+.layer-dimension {
+  width: 60px;
+  margin: 4px 0;
+  margin-right: 4px; }
+
+input, select {
+  border-radius: 0px;
+  border: 1px solid #adadad;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  padding: 3px; }
+
+/*# sourceMappingURL=main.css.map */
